@@ -1,0 +1,38 @@
+.search-container {
+    position: relative;
+  }
+  
+  .search-spinner {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    z-index: 10;
+  }
+  
+  .article-item {
+    transition: transform 0.2s;
+    border-left: 3px solid #007bff;
+  }
+  
+  .article-item:hover {
+    transform: translateX(5px);
+  }
+  
+  .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .card-title {
+    color: #007bff;
+  }
+  
+  canvas {
+    margin: 20px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .col-md-6 {
+      margin-bottom: 30px;
+    }
+  }

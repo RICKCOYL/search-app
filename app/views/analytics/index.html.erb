@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-10 offset-md-1">
+    <div class="card mb-4">
+      <div class="card-body">
+        <h2 class="card-title">Analytics</h2>
+        <div class="row mt-5">
+          <div class="col-md-6">
+            <h3>Top Searches</h3>
+            <canvas id="topSearchesChart" width="400" height="300"></canvas>
+            <div class="table-responsive mt-3">
+              <table class="table table-striped top-searches-table">
+                <thead>
+                  <tr>
+                    <th>Search Term</th>
+                    <th>Count</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% if @top_searches.present? %>
+                    <% @top_searches.each do |query, count| %>
+                      <tr>
+                        <td><%= query %></td>
+                        <td><%= count %></td>
+                      </tr>
+                    <% end %>
+                  <% else %>
+                    <tr>
+                      <td colspan="2" class="text-center">No search data available</td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <h3>Your Searches</h3>
+            <canvas id="userSearchesChart" width="400" height="300"></canvas>
+            <div class="table-responsive mt-3">
+              <table class="table table-striped user-searches-table">
+                <thead>
+                  <tr>
+                    <th>Search Term</th>
+                    <th>Count</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% if @user_searches.present? %>
+                    <% @user_searches.each do |query, count| %>
+                      <tr>
+                        <td><%= query %></td>
+                        <td><%= count %></td>
+                      </tr>
+                    <% end %>
+                  <% else %>
+                    <tr>
+                      <td colspan="2" class="text-center">No search data available</td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
