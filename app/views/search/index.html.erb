@@ -1,0 +1,81 @@
+<div class="container mt-4">
+  <div class="search-input-container mb-4">
+    <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Top Searches</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Query</th>
+                  <th>Count</th>
+                </tr>
+              </thead>
+              <tbody id="topSearchesTable">
+                <% @top_searches.each do |query, count| %>
+                  <tr>
+                    <td><%= query %></td>
+                    <td><%= count %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Your Searches</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Query</th>
+                  <th>Count</th>
+                </tr>
+              </thead>
+              <tbody id="userSearchesTable">
+                <% @user_searches.each do |search| %>
+                  <tr>
+                    <td><%= search.query %></td>
+                    <td><%= search.search_count %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Top Searches Chart</h2>
+          <canvas id="topSearchesChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Your Searches Chart</h2>
+          <canvas id="userSearchesChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag 'analytics' %> 
