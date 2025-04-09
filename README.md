@@ -1,3 +1,4 @@
+[LIVE DEMO](https://search-app-mrtb.onrender.com/analytics)
 # Search Analytics App
 A real-time search analytics application built with Ruby on Rails and JavaScript that tracks and analyzes user search patterns.
 
