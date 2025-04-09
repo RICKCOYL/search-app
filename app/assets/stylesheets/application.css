@@ -26,6 +26,14 @@
   .card-title {
     color: #007bff;
   }
+
+  ul li {
+    color: #fff;
+  }
+  
+  ul li:not(:last-child) {
+    margin-right: 10px;
+  }
   
   canvas {
     margin: 20px 0;
